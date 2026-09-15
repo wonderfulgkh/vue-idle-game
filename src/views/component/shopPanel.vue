@@ -172,7 +172,7 @@ export default {
           type: "warning",
         });
       } else {
-        this.$store.commit("set_player_gold", +1000000000);
+        this.$store.commit("set_player_gold", +10000);
         this.grid = new Array(5).fill({});
         var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
         var alv = Number(this.$store.state.playerAttribute.armor.lv);
@@ -192,16 +192,16 @@ export default {
       var r = Math.random();
       if (r <= equip[0]) {
         // 获得普通装备
-        equipQua = 1;
+        equipQua = 4;
       } else if (r < equip[1] + equip[0] && r >= equip[0]) {
         // 获得神器装备
-        equipQua = 2;
+        equipQua = 4;
       } else if (
         r < equip[2] + equip[1] + equip[0] &&
         r >= equip[1] + equip[0]
       ) {
         // 获得史诗装备
-        equipQua = 3;
+        equipQua = 4;
       } else if (
         r < equip[3] + equip[2] + equip[1] + equip[0] &&
         r >= equip[2] + equip[1] + equip[0]
