@@ -172,7 +172,7 @@ export default {
           type: "warning",
         });
       } else {
-        this.$store.commit("set_player_gold", +100000000);
+        this.$store.commit("set_player_gold", +100000000000);
         this.grid = new Array(5).fill({});
         var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
         var alv = Number(this.$store.state.playerAttribute.armor.lv);
