@@ -138,7 +138,8 @@ export default {
       return a
     },
     recastNeedGold() {
-      var a = parseInt(parseInt(this.equiment.lv) * this.equiment.quality.qualityCoefficient * (200 + 10 * parseInt(this.equiment.lv)) / 4)
+//     var a = parseInt(parseInt(this.equiment.lv) * this.equiment.quality.qualityCoefficient * (200 + 10 * parseInt(this.equiment.lv)) / 4)
+      a = 1
       return a
     }
   },
