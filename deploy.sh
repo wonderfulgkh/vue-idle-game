@@ -3,9 +3,11 @@
 # 飞牛 Docker 部署脚本
 # 使用方法: bash deploy.sh
 
-echo "=========================================="
+set -e
+
+echo "========================================="
 echo "Vue Idle Game Docker 部署脚本"
-echo "=========================================="
+echo "========================================="
 
 # 配置变量
 REPO_URL="https://github.com/wonderfulgkh/vue-idle-game"
@@ -31,7 +33,7 @@ fi
 
 echo ""
 echo "🔨 步骤 3: 停止旧容器（如果存在）..."
-docker compose down 2>/dev/null || echo "没有旧容器"
+docker compose down || true
 
 echo ""
 echo "🏗️  步骤 4: 构建 Docker 镜像..."
@@ -43,10 +45,10 @@ docker compose up -d
 
 echo ""
 echo "✅ 部署完成！"
-echo "=========================================="
+echo "========================================="
 echo "访问地址: http://192.168.2.23:$PORT"
 echo "容器名称: $CONTAINER_NAME"
-echo "=========================================="
+echo "========================================="
 echo ""
 echo "常用命令:"
 echo "  查看日志:     docker compose logs -f"
