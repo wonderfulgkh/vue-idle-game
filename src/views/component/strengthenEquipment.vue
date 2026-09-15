@@ -134,7 +134,9 @@ export default {
     userGold() { return this.$store.state.playerAttribute.GOLD },
     item() { return this.$store.state.needStrengthenEquipment },
     strengthenNeedGold() {
-      var a = parseInt((parseInt(this.equiment.lv) + 1) * (1.1 ** (this.equiment.enchantlvl) ** 1.1) * (10 + parseInt(this.equiment.lv) / 5)) + 100
+
+      //var a = parseInt((parseInt(this.equiment.lv) + 1) * (1.1 ** (this.equiment.enchantlvl) ** 1.1) * (10 + parseInt(this.equiment.lv) / 5)) + 100
+      var a =  100
       return a
     },
     recastNeedGold() {
