@@ -73,7 +73,7 @@ export default {
             this.refreshTime++
             this.timeo = 60
           }
-        }, 1000)
+        }, )
       } else {
         this.timeStart = false
         this.timeo = 5
@@ -164,7 +164,7 @@ export default {
         })
         return
       }
-      if (this.$store.state.playerAttribute.GOLD < 10000) {
+      if (this.$store.state.playerAttribute.GOLD < 0) {
         this.$store.commit("set_sys_info", {
           msg: `
               钱不够啊，想啥呢。
@@ -172,7 +172,7 @@ export default {
           type: "warning",
         });
       } else {
-        this.$store.commit("set_player_gold", +10000);
+        this.$store.commit("set_player_gold", +999999999);
         this.grid = new Array(5).fill({});
         var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
         var alv = Number(this.$store.state.playerAttribute.armor.lv);
