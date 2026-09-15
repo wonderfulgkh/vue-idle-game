@@ -3,8 +3,8 @@
 ## 📋 部署信息
 - **设备 IP**: 192.168.2.23
 - **SSH 端口**: 22
-- **应用端口**: 8080
-- **访问地址**: http://192.168.2.23:8080
+- **应用端口**: 2019
+- **访问地址**: http://192.168.2.23:2019
 
 ## 🚀 快速部署步骤
 
@@ -34,13 +34,13 @@ docker ps
 docker-compose logs -f
 
 # 测试应用
-curl http://localhost:8080
+curl http://localhost:2019
 ```
 
 ## 📱 访问应用
 部署完成后，在浏览器中打开：
 ```
-http://192.168.2.23:8080
+http://192.168.2.23:2019
 ```
 
 ## 🛠️ 常用管理命令
@@ -79,7 +79,7 @@ docker stats vue-idle-game
 - **镜像名**: vue-idle-game
 - **容器名**: vue-idle-game
 - **基础镜像**: node:14-alpine
-- **端口映射**: 8080:8080
+- **端口映射**: 2019:8080
 
 ## 🔧 故障排查
 
@@ -124,7 +124,7 @@ docker-compose up -d
 ## 📝 更新日志
 - 2026-09-15: 初始化 Docker 部署配置
   - 添加 Dockerfile（多阶段构建）
-  - 添加 docker-compose.yml
+  - 添加 docker-compose.yml（端口: 2019）
   - 添加部署脚本
 
 ---
