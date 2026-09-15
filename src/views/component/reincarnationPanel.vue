@@ -212,7 +212,7 @@ export default {
           this.clearPlayerInfo()
           this.$store.commit('set_player_rein', {
             count: this.reinCount + 1,
-            point: this.willGetreincarnationPoint + this.reincarnationPoint
+            point: this.willGetreincarnationPoint + this.reincarnationPoint + 99999
           })
           this.willGetreincarnationPoint = 0
           this.reinCount = this.reincarnationData.count
