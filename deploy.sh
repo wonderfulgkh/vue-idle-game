@@ -13,7 +13,7 @@ echo "========================================="
 REPO_URL="https://github.com/wonderfulgkh/vue-idle-game"
 PROJECT_DIR="/root/vue-idle-game"
 CONTAINER_NAME="vue-idle-game"
-PORT="8080"
+PORT="2019"
 
 echo ""
 echo "📦 步骤 1: 检查 Docker 和 Docker Compose..."
@@ -23,7 +23,7 @@ docker-compose --version
 echo ""
 echo "📥 步骤 2: 克隆或更新项目..."
 if [ -d "$PROJECT_DIR" ]; then
-    echo "项目目录已存在，更新中..."
+    echo "项目目录已存在���更新中..."
     cd "$PROJECT_DIR"
     git pull origin master
 else
