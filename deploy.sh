@@ -2,6 +2,7 @@
 
 # 飞牛 Docker 部署脚本
 # 使用方法: bash deploy.sh
+# 注意: 需要 Docker 28.5+ 版本（内置 docker compose 命令）
 
 set -e
 
@@ -33,7 +34,7 @@ fi
 
 echo ""
 echo "🔨 步骤 3: 停止旧容器（如果存在）..."
-docker compose down || true
+docker compose down 2>/dev/null || true
 
 echo ""
 echo "🏗️  步骤 4: 构建 Docker 镜像..."
