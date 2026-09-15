@@ -5,6 +5,7 @@
 - **SSH 端口**: 22
 - **应用端口**: 2019
 - **访问地址**: http://192.168.2.23:2019
+- **Docker 版本**: 28.5.2+（内置 Compose）
 
 ## 🚀 快速部署步骤
 
@@ -31,7 +32,7 @@ curl -fsSL https://raw.githubusercontent.com/wonderfulgkh/vue-idle-game/master/d
 docker ps
 
 # 查看日志
-docker-compose logs -f
+docker compose logs -f
 
 # 测试应用
 curl http://localhost:2019
@@ -48,26 +49,26 @@ http://192.168.2.23:2019
 ### 查看日志
 ```bash
 cd /root/vue-idle-game
-docker-compose logs -f
+docker compose logs -f
 ```
 
 ### 重启应用
 ```bash
 cd /root/vue-idle-game
-docker-compose restart
+docker compose restart
 ```
 
 ### 停止应用
 ```bash
 cd /root/vue-idle-game
-docker-compose down
+docker compose down
 ```
 
 ### 更新应用（拉取最新代码）
 ```bash
 cd /root/vue-idle-game
 git pull origin master
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### 查看容器资源占用
@@ -86,11 +87,11 @@ docker stats vue-idle-game
 ### 容器无法启动
 ```bash
 # 查看错误日志
-docker-compose logs
+docker compose logs
 
 # 删除旧容器重新构建
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ### 占用内存过多
@@ -103,8 +104,8 @@ docker system prune -a
 ```bash
 cd /root/vue-idle-game
 git pull origin master
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ## 💾 备份和恢复
@@ -118,18 +119,19 @@ tar -czf vue-idle-game-backup.tar.gz /root/vue-idle-game
 ```bash
 tar -xzf vue-idle-game-backup.tar.gz -C /root
 cd /root/vue-idle-game
-docker-compose up -d
+docker compose up -d
 ```
 
 ## 📝 更新日志
-- 2026-09-15: 初始化 Docker 部署配置
+- 2026-09-15: Docker 部署配置
   - 添加 Dockerfile（多阶段构建）
   - 添加 docker-compose.yml（端口: 2019）
   - 添加部署脚本
+  - 优化为使用 Docker 28.5.2+ 内置的 `docker compose` 命令
 
 ---
 
 有任何问题？检查日志或运行：
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
