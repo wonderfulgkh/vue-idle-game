@@ -135,13 +135,11 @@ export default {
     item() { return this.$store.state.needStrengthenEquipment },
     strengthenNeedGold() {
 
-      //var a = parseInt((parseInt(this.equiment.lv) + 1) * (1.1 ** (this.equiment.enchantlvl) ** 1.1) * (10 + parseInt(this.equiment.lv) / 5)) + 100
-      var a =  100
+      var a = 1 //parseInt((parseInt(this.equiment.lv) + 1) * (1.1 ** (this.equiment.enchantlvl) ** 1.1) * (10 + parseInt(this.equiment.lv) / 5)) + 100
       return a
     },
     recastNeedGold() {
-//     var a = parseInt(parseInt(this.equiment.lv) * this.equiment.quality.qualityCoefficient * (200 + 10 * parseInt(this.equiment.lv)) / 4)
-      a = 1
+      var a = parseInt(parseInt(this.equiment.lv) * this.equiment.quality.qualityCoefficient * (200 + 10 * parseInt(this.equiment.lv)) / 4)
       return a
     }
   },
