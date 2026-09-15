@@ -16,14 +16,23 @@ CONTAINER_NAME="vue-idle-game"
 PORT="2019"
 
 echo ""
-echo "📦 步骤 1: 检查 Docker 和 Docker Compose..."
+echo "📦 步骤 1: 检查 Docker..."
 docker --version
+
+echo ""
+echo "📥 步骤 1.5: 检查并安装 Docker Compose..."
+if ! command -v docker-compose &> /dev/null; then
+    echo "Docker Compose 未安装，正在安装..."
+    curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+    echo "Docker Compose 安装完成"
+fi
 docker-compose --version
 
 echo ""
 echo "📥 步骤 2: 克隆或更新项目..."
 if [ -d "$PROJECT_DIR" ]; then
-    echo "项目目录已存在���更新中..."
+    echo "项目目录已存在，更新中..."
     cd "$PROJECT_DIR"
     git pull origin master
 else
