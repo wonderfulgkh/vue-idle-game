@@ -147,7 +147,7 @@ export default new Vuex.Store({
     },
     playerAttribute: {
       lv: 1,
-      GOLD: 0,
+      GOLD: 99999999999,
       healthRecoverySpeed: 1,
       endlessLv: 0,
       attribute: {
