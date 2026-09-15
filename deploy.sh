@@ -3,7 +3,7 @@
 # 飞牛 Docker 部署脚本
 # 使用方法: bash deploy.sh
 
-set -e
+set +e
 
 echo "========================================="
 echo "Vue Idle Game Docker 部署脚本"
@@ -23,9 +23,12 @@ echo ""
 echo "📥 步骤 1.5: 检查并安装 Docker Compose..."
 if ! command -v docker-compose &> /dev/null; then
     echo "Docker Compose 未安装，正在安装..."
-    curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP '"tag_name": "\K[^"]*')
+    curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
-    echo "Docker Compose 安装完成"
+    echo "✅ Docker Compose 安装完成"
+else
+    echo "✅ Docker Compose 已安装"
 fi
 docker-compose --version
 
