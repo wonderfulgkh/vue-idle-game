@@ -188,15 +188,15 @@ export default {
       if (lv <= 5) {
         probabilityOfSuccess = 1
       } else if (lv == 6) {
-        probabilityOfSuccess = 0.8
+        probabilityOfSuccess = 1
       } else if (lv == 7) {
-        probabilityOfSuccess = 0.65
+        probabilityOfSuccess = 1
       } else if (lv == 8) {
-        probabilityOfSuccess = 0.45
+        probabilityOfSuccess = 1
       } else if (lv == 9) {
-        probabilityOfSuccess = 0.3
+        probabilityOfSuccess = 1
       } else {
-        probabilityOfSuccess = 0.2
+        probabilityOfSuccess = 1
       }
       let r = Math.random()
       if (r < probabilityOfSuccess) {
@@ -249,13 +249,13 @@ export default {
       this.$store.commit("set_player_gold", -parseInt(this.recastNeedGold));
       var a = parseInt(this.equiment.extraEntry[k].EntryLevel)
       if (a < 25) {
-        this.qualityClass = 'D'
+        this.qualityClass = 'S'
       } else if (a < 50 && a >= 25) {
-        this.qualityClass = 'C'
+        this.qualityClass = 'S'
       } else if (a < 70 && a >= 50) {
-        this.qualityClass = 'B'
+        this.qualityClass = 'S'
       } else if (a < 90 && a >= 70) {
-        this.qualityClass = 'A'
+        this.qualityClass = 'S'
       } else {
         this.qualityClass = 'S'
       }
